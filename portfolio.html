@@ -477,8 +477,9 @@
                 <a href="#" class="logo">Design<span>Deng</span></a>
                 <div class="nav-links">
                     <a href="#" class="active">首页</a>
-                    <a href="#portfolio">作品集</a>
-                    <a href="#skills">技能</a>
+                    <a href="#game">游戏相关</a>
+                    <a href="#skills">专业技能</a>
+                    <a href="#design">设计作品</a>
                 </div>
             </div>
         </div>
@@ -488,66 +489,37 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>我的想法</h1>
-                <p>欢迎来到我的想法世界！这里展示了我的一些练习和作品。每个项目都承载着一段独特的时光，记录下我前进的足迹。</p>
-                <a href="#portfolio" class="cta-button">
-                    <i class="fas fa-arrow-down"></i> 探索作品集
+                <h1>个人作品集</h1>
+                <p>欢迎来到我的作品集，这里展示了我在游戏相关、专业技能和设计作品三个方面的成长与实践。</p>
+                <a href="#game" class="cta-button">
+                    <i class="fas fa-arrow-down"></i> 开始探索
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- 作品集区域 -->
-    <section id="portfolio" class="portfolio-section">
+    <!-- 游戏相关 -->
+    <section id="game" class="portfolio-section">
         <div class="container">
             <div class="section-title">
-                <h2>作品集</h2>
+                <h2>游戏相关</h2>
             </div>
             <div class="portfolio-grid">
-                <!-- 项目 1 -->
                 <div class="portfolio-item">
                     <div class="portfolio-img">
-                        <img src="作品\游程设计的东西\屏幕截图 2025-09-11 171011.png" alt="游戏相关">
+                        <img src="作品/游程设计的东西/屏幕截图 2025-09-11 171011.png" alt="游戏Demo">
                     </div>
                     <div class="portfolio-content">
-                        <h3>游戏相关</h3>
-                        <p>参与过的游戏Demo、制作的游戏拆解案等等。</p>
+                        <h3>游戏Demo展示</h3>
+                        <p>参与过的游戏Demo、制作的游戏拆解案等。</p>
                     </div>
                 </div>
-
-                <!-- 项目 2 -->
-                <div class="portfolio-item">
-                    <div class="portfolio-img">
-                        <img src="火.png" alt="火">
-                    </div>
-                    <div class="portfolio-content">
-                        <h3>专业技能</h3>
-                        <p>能够让我胜任工作的专业技能。</p>
-                    </div>
-                </div>
-
-                <!-- 项目 3 -->
-                <div class="portfolio-item">
-                    <div class="portfolio-img">
-                        <img src="乐.png" alt="乐">
-                    </div>
-                    <div class="portfolio-content">
-                        <h3>设计作品</h3>
-                        <p>已经完成的设计展示。</p>
-                    </div>
-                </div>
-
-                
-                <div class="portfolio-links"></div>
-                    <a href="https://your-portfolio-site.com" target="_blank" class="cta-button">
-                        <i class="fas fa-external-link-alt"></i> 查看完整作品集
-                    </a>
-                </div>
+                <!-- 可添加更多游戏相关项目 -->
             </div>
         </div>
     </section>
 
-    <!-- 技能区域 -->
+    <!-- 专业技能 -->
     <section id="skills" class="skills-section">
         <div class="container">
             <div class="section-title">
@@ -579,6 +551,36 @@
         </div>
     </section>
 
+    <!-- 设计作品 -->
+    <section id="design" class="portfolio-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>设计作品</h2>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-img">
+                        <img src="火.png" alt="火">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>视觉设计作品</h3>
+                        <p>海报、电子屏等视觉设计展示。</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-img">
+                        <img src="乐.png" alt="乐">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>其他设计</h3>
+                        <p>已完成的其他设计作品。</p>
+                    </div>
+                </div>
+                <!-- 可添加更多设计作品项目 -->
+            </div>
+        </div>
+    </section>
+
     <!-- 页脚 -->
     <footer>
         <div class="container">
@@ -598,12 +600,10 @@
             const sections = document.querySelectorAll('section');
             const heroSection = document.querySelector('.hero');
 
-            // 初始加载时高亮首页（如果没有 hash）
             if (!window.location.hash) {
                 document.querySelector('.nav-links a[href="#"]').classList.add('active');
             }
 
-            // 点击导航时更新高亮
             navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
                     navLinks.forEach(item => item.classList.remove('active'));
@@ -611,7 +611,6 @@
                 });
             });
 
-            // 滚动时自动高亮当前可见的 section
             const observerOptions = {
                 root: null,
                 rootMargin: '0px',
@@ -633,17 +632,14 @@
                 });
             }, observerOptions);
 
-            // 观察所有 section
             sections.forEach(section => {
                 observer.observe(section);
             });
 
-            // 观察 hero 区域（首页）
             if (heroSection) {
                 observer.observe(heroSection);
             }
 
-            // 处理浏览器前进/后退按钮
             window.addEventListener('hashchange', () => {
                 const hash = window.location.hash;
                 navLinks.forEach(link => {
