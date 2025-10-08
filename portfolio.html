@@ -168,6 +168,7 @@
         /* 作品集区域 */
         .portfolio-section {
             padding: 90px 0;
+            background: rgba(0, 0, 0, 0.15); /* 新增：原本是.skills-section的背景 */
         }
 
         .section-title {
@@ -209,6 +210,7 @@
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.1);
+            grid-column: span 3;
         }
 
         .portfolio-item:hover {
@@ -274,7 +276,7 @@
         /* 技能区域 */
         .skills-section {
             padding: 90px 0;
-            background: rgba(0, 0, 0, 0.15);
+            /*background: rgba(0, 0, 0, 0.15);*/ /* 已移至.portfolio-section */
         }
 
         .skills-grid {
@@ -381,7 +383,7 @@
             padding: 40px 0;
             text-align: center;
             color: var(--gray);
-            background: rgba(0, 0, 0, 0.2);
+            /*background: rgba(0, 0, 0, 0.2);*/
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
@@ -493,6 +495,9 @@
                 <p>欢迎来到我的作品集，这里展示了我在游戏相关、专业技能和设计作品三个方面的成长与实践。</p>
                 <a href="#game" class="cta-button">
                     <i class="fas fa-arrow-down"></i> 开始探索
+                    </a>
+                    <a href="https://pan.baidu.com/s/1rFzGImbRQyia5tCMmS3syw?pwd=bt3y" class="cta-button" style="margin-left: 18px;" download>
+                        <i class="fas fa-download"></i> 下载作品原文件
                 </a>
             </div>
         </div>
@@ -506,12 +511,86 @@
             </div>
             <div class="portfolio-grid">
                 <div class="portfolio-item">
-                    <div class="portfolio-img">
+                    <!--<div class="portfolio-img">
                         <img src="作品/游程设计的东西/屏幕截图 2025-09-11 171011.png" alt="游戏Demo">
-                    </div>
+                    </div>-->
                     <div class="portfolio-content">
-                        <h3>游戏Demo展示</h3>
-                        <p>参与过的游戏Demo、制作的游戏拆解案等。</p>
+                        <div style="display: flex; flex-direction: column; gap: 28px;">
+                            <!-- 游戏设计Demo -->
+                            <div>
+                                <h4 style="color: #fd79a8; margin-bottom: 10px;">游戏设计 Demo</h4>
+                                <div style="display: flex; flex-wrap: wrap; gap: 18px; justify-content: center;">
+                                    <div style="flex: 1 1 180px; min-width: 180px; max-width: 480px; background: rgba(255,255,255,0.04); border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                                        <img src="Demo1.png" alt="Demo1" style="width: 100%; height: 280px; object-fit: cover;">
+                                        <div style="padding: 10px 12px;">
+                                            <strong>跑酷小游戏</strong>
+                                            <p style="font-size: 0.98rem; color: #b2becd;">
+                                                这是在临水OR社团和几个同学组成小组一起制作的作品，由于考试等因素最终没有完成。这个小组专业比较多样化，2D游戏的制作也更加简单一些。最后实现了跑酷地图的搭建，角色可以在地图里行动跳跃。<br>
+                                                我在制作过程中主要负责策划工作，策划包括整个游戏的最初概念（跑酷游戏）和游戏的其他未实现的机制。游戏是由社团负责人给出命题启发，之后再由我们制作的，命题是骰子或天使和恶魔，我们更倾向于把这两个结合起来，创造出一款跑酷游戏，在前进时收集天使与恶魔骰子，根据骰子数量到达终点时选择天使或恶魔路线，之后需要返回，天使和恶魔有不一样的特殊能力（天使能够飞翔，恶魔能够改变地形等等），地形也会根据选择的路线不同有变化。<br>
+                                                游戏和星之卡比没有关系，是因为没有美术，找到了卡比的模型先用着
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div style="flex: 1 1 180px; min-width: 180px; max-width: 480px; background: rgba(255,255,255,0.04); border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                                        <img src="Demo2.png" alt="Demo2" style="width: 100%; height: 280px; object-fit: cover;">
+                                        <div style="padding: 10px 12px;">
+                                            <strong>第三人称射击动作闯关</strong>
+                                            <p style="font-size: 0.98rem; color: #b2becd;">
+                                                这是在计算机游戏程序设计的课程上制作的作品，我觉得完全没有达成我想要的结果……综合来讲，我觉得大部分原因在于技术力和时间上的不足，课程所在学期的其他课程压力比较大，很难拿出足够的时间给做游戏，加上我们小组都是工业设计专业，其实大家会的东西都差不多，分工很难分得详细，其实很多模型部分都是网上下载的。最后实现了地图的搭建，角色可以在地图里自由行动、通过传送门传送到各个部分，BOSS会向角色发起攻击，角色可以进行射击，小怪受到射击会死亡。<br>
+                                                我在制作过程中主要负责策划和部分程序工作，策划包括整个游戏的最初概念（单机TPS游戏），还设计了一部分UI，主要是射击相关的部分；程序工作包括了整个射击瞄准过程中摄像机的移动、子弹的发射，以及瞄准时按Shift换肩的功能。
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 游戏分析 -->
+                            <div>
+                                <h4 style="color: #fd79a8; margin-bottom: 10px;">游戏分析</h4>
+                                <div style="display: flex; flex-wrap: wrap; gap: 18px; justify-content: center;">
+                                    <div style="flex: 1 1 180px; min-width: 180px; max-width: 960px; background: rgba(255,255,255,0.04); border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                                        <img src="Demo3.png" alt="Demo3" style="width: 100%; height: 537px; object-fit: cover;">
+                                        <div style="padding: 10px 12px;">
+                                            <strong>游戏中的文化与美术风格分析</strong>
+                                            <p style="font-size: 0.98rem; color: #b2becd;">
+                                                这是文化构成课程的作业，分析选择的文艺作品中与文化相关联的部分，我选择了《完美的一天》这款单机游戏作为分析目标，主要分析了关于这款游戏中体现的关于“家”的特殊情感，和2000年左右中国西北城市的特有环境氛围。
+                                                <a href="https://www.canva.cn/design/DAGkVCB8SBQ/AZXJv5OdJjmU2TWyfk9yCA/view?utm_content=DAGkVCB8SBQ&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hf87034db25" target="_blank" style="color: #6c5ce7; text-decoration: underline; font-size: 0.98rem; margin-left: 4px;">查看详情</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 游戏拆解案 -->
+                            <div>
+                                <h4 style="color: #fd79a8; margin-bottom: 10px;">游戏拆解案</h4>
+                                <div style="display: flex; flex-wrap: wrap; gap: 18px; justify-content: center;">
+                                    <div style="flex: 1 1 180px; min-width: 180px; max-width:405px; background: rgba(255,255,255,0.04); border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                                        <img src="Crime Scene Cleaner.png" alt="Case1" style="width: 100%; height: 451px; object-fit: cover;">
+                                        <div style="padding: 10px 12px;">
+                                            <strong>拆解案一</strong>
+                                            <p style="font-size: 0.98rem; color: #b2becd;">
+                                                一款普通单机游戏的玩法机制与关卡结构分析。
+                                                <a href="《Crime Scene Cleaner》核心系统拆解案.pdf" target="_blank" style="color: #6c5ce7; text-decoration: underline; font-size: 0.98rem; margin-left: 4px;">查看详情</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div style="flex: 1 1 180px; min-width: 180px; max-width: 555px; background: rgba(255,255,255,0.04); border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                                        <img src="Beatstar.png" alt="Case2" style="width: 100%; height: 708px; object-fit: cover;">
+                                        <div style="padding: 10px 12px;">
+                                            <strong>拆解案二</strong>
+                                            <p style="font-size: 0.98rem; color: #b2becd;">
+                                                美术风格与交互体验分析。
+                                                <a href="《Beatstar》核心系统拆解案.pdf" target="_blank" style="color: #6c5ce7; text-decoration: underline; font-size: 0.98rem; margin-left: 4px;">查看详情</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="margin-top: 18px;">
+                                <p style="font-size: 1.05rem; color: #b2becd;">
+                                    更多项目内容可联系获取详细文档或试玩体验。
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!-- 可添加更多游戏相关项目 -->
